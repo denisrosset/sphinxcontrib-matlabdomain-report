@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Base object types in RepLAB &#8212; RepLAB 0.6.0-SNAPSHOT documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapse_admonitions.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/collapse_admonitions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Abstract group structures in RepLAB" href="groups.html" />
+    <link rel="prev" title="Technical Reference/API" href="index.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../mat-modindex.html" title="MATLAB Module Index"
+             >matlab index</a> |</li>
+        <li class="right" >
+          <a href="groups.html" title="Abstract group structures in RepLAB"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Technical Reference/API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB 0.6.0-SNAPSHOT documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Technical Reference/API</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar"><a href="
+    ../index.html" class="text-logo">RepLAB</a>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Table Of Contents</h2>
+  </div>
+  <div class="sidebar-toc">
+    
+    
+      <ul class="current">
+<li class="toctree-l1"><a class="reference external" href="http://127.0.0.1:4000/replab/docs/tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://127.0.0.1:4000/replab/docs/howto/howto.html">How-to guides</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://127.0.0.1:4000/replab/docs/topic/guides.html">Topic guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Technical Reference/API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Base object types in RepLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#str">Str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domain">Domain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="groups.html">Abstract group structures in RepLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="http://127.0.0.1:4000/replab/docs/development/development.html">Development &amp; Community</a></li>
+</ul>
+
+    
+  </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+                <li><a href="index.html">Technical Reference/API</a></li>
+              
+              <li>Base object types in RepLAB</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="base-object-types-in-replab">
+<h1>Base object types in RepLAB<a class="headerlink" href="#base-object-types-in-replab" title="Permalink to this headline">¶</a></h1>
+<p>The following classes are at the base of many RepLAB objects.</p>
+<span class="target" id="module-+replab"></span><ul class="simple">
+<li><p><a class="reference internal" href="#+replab.Str" title="+replab.Str"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Str</span></code></a>: provides infrastructure for pretty printing of objects, in a way compatible with Matlab and Octave</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain" title="+replab.Domain"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">Domain</span></code></a>: describes a set of elements that can be compared for equality, and can also be sampled from</p></li>
+</ul>
+<div class="section" id="str">
+<span id="id1"></span><h2>Str<a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="+replab.Str">
+<em class="property">class </em><code class="sig-prename descclassname">replab.</code><code class="sig-name descname">Str</code><a class="headerlink" href="#+replab.Str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">handle</span></code></p>
+<p>Defines a ‘str’ default method and overloads ‘disp’</p>
+<p>Also provides methods <a class="reference internal" href="#+replab.Str.additionalFields" title="+replab.Str.additionalFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">additionalFields</span></code></a> and <a class="reference internal" href="#+replab.Str.hiddenFields" title="+replab.Str.hiddenFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">hiddenFields</span></code></a> to guide long form object pretty printing</p>
+<div class="collapsed admonition">
+<p class="admonition-title">Class members list</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#+replab.Str.additionalFields" title="+replab.Str.additionalFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">additionalFields</span></code></a> – Returns the name/value pairs corresponding to additional fields to be printed</p></li>
+<li><p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">disp</span></code> –</p></li>
+<li><p><a class="reference internal" href="#+replab.Str.eq" title="+replab.Str.eq"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">eq</span></code></a> – Equality test</p></li>
+<li><p><a class="reference internal" href="#+replab.Str.headerStr" title="+replab.Str.headerStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">headerStr</span></code></a> – Tiny single line description of the current object type</p></li>
+<li><p><a class="reference internal" href="#+replab.Str.hiddenFields" title="+replab.Str.hiddenFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">hiddenFields</span></code></a> – Returns the names of the fields that are not printed as a row vector</p></li>
+<li><p><a class="reference internal" href="#+replab.Str.longStr" title="+replab.Str.longStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">longStr</span></code></a> – Multi-line description of the current object</p></li>
+<li><p><a class="reference internal" href="#+replab.Str.shortStr" title="+replab.Str.shortStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">shortStr</span></code></a> – Single line text description of the current object</p></li>
+</ul>
+</div>
+<h3>Own members</h3><dl class="method">
+<dt id="+replab.Str.additionalFields">
+<code class="sig-name descname">additionalFields</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.additionalFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name/value pairs corresponding to additional fields to be printed</p>
+<p>Classes that override this method should call the superclass method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>names</strong> (<em>row cell vector of charstring</em>) – Additional names to display</p></li>
+<li><p><strong>values</strong> (<em>row cell vector of charstring</em>) – Additional values to display</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Str.eq">
+<code class="sig-name descname">eq</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.eq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equality test</p>
+<p>Workaround bug of == not implemented for handles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<em>object</em>) – first object</p></li>
+<li><p><strong>rhs</strong> (<em>object</em>) – second object to compare to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true iff self == rhs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Str.headerStr">
+<code class="sig-name descname">headerStr</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.headerStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tiny single line description of the current object type</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">replab.headerStr</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Str.hiddenFields">
+<code class="sig-name descname">hiddenFields</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.hiddenFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the names of the fields that are not printed as a row vector</p>
+<p>Classes that override this method should call the superclass method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Field names to hide</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>row cell vector of charstring</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Str.longStr">
+<code class="sig-name descname">longStr</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">maxRows</em>, <em class="sig-param">maxColumns</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.longStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multi-line description of the current object</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">replab.longStr</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Str.shortStr">
+<code class="sig-name descname">shortStr</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">maxColumns</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Str.shortStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single line text description of the current object</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">replab.shortStr</span></code></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="domain">
+<span id="id2"></span><h2>Domain<a class="headerlink" href="#domain" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="+replab.Domain">
+<em class="property">class </em><code class="sig-prename descclassname">replab.</code><code class="sig-name descname">Domain</code><a class="headerlink" href="#+replab.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#+replab.Str" title="+replab.Str"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">replab.Str</span></code></a></p>
+<p>Describes a set of elements with a common structure</p>
+<p>Those elements can be compared (<a class="reference internal" href="#+replab.Domain.eqv" title="+replab.Domain.eqv"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">eqv</span></code></a>), and random elements can be produced (<a class="reference internal" href="#+replab.Domain.sample" title="+replab.Domain.sample"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">sample</span></code></a>).</p>
+<div class="collapsed admonition">
+<p class="admonition-title">Class members list</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#+replab.Domain.additionalFields" title="+replab.Domain.additionalFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">additionalFields</span></code></a> – Returns the name/value pairs corresponding to additional fields to be printed</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.assertEqv" title="+replab.Domain.assertEqv"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">assertEqv</span></code></a> – Compares two elements for equality</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.assertNotEqv" title="+replab.Domain.assertNotEqv"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">assertNotEqv</span></code></a> – Compares two elements for inequality</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.disp" title="+replab.Domain.disp"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">disp</span></code></a> –</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.eq" title="+replab.Domain.eq"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">eq</span></code></a> – Equality test</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.eqv" title="+replab.Domain.eqv"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">eqv</span></code></a> – Tests domain elements for equality/equivalence</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.headerStr" title="+replab.Domain.headerStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">headerStr</span></code></a> – Tiny single line description of the current object type</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.hiddenFields" title="+replab.Domain.hiddenFields"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">hiddenFields</span></code></a> – Returns the names of the fields that are not printed as a row vector</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.lambda" title="+replab.Domain.lambda"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">lambda</span></code></a> – Constructs a domain from function handles</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.longStr" title="+replab.Domain.longStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">longStr</span></code></a> – Multi-line description of the current object</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.sample" title="+replab.Domain.sample"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">sample</span></code></a> – Samples an element from this domain</p></li>
+<li><p><a class="reference internal" href="#+replab.Domain.shortStr" title="+replab.Domain.shortStr"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">shortStr</span></code></a> – Single line text description of the current object</p></li>
+</ul>
+</div>
+<div class="collapsed admonition">
+<p class="admonition-title">Inherited elements</p>
+<dl class="method">
+<dt id="+replab.Domain.additionalFields">
+<code class="sig-name descname">additionalFields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.additionalFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.additionalFields" title="+replab.Str.additionalFields"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.additionalFields()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.disp">
+<code class="sig-name descname">disp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.disp" title="Permalink to this definition">¶</a></dt>
+<dd><p>No documentation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.eq">
+<code class="sig-name descname">eq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.eq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.eq" title="+replab.Str.eq"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.eq()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.headerStr">
+<code class="sig-name descname">headerStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.headerStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.headerStr" title="+replab.Str.headerStr"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.headerStr()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.hiddenFields">
+<code class="sig-name descname">hiddenFields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.hiddenFields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.hiddenFields" title="+replab.Str.hiddenFields"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.hiddenFields()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.longStr">
+<code class="sig-name descname">longStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.longStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.longStr" title="+replab.Str.longStr"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.longStr()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.shortStr">
+<code class="sig-name descname">shortStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.shortStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation in <a class="reference internal" href="#+replab.Str.shortStr" title="+replab.Str.shortStr"><code class="xref mat mat-meth docutils literal notranslate"><span class="pre">replab.Str.shortStr()</span></code></a></p>
+</dd></dl>
+
+</div>
+<h3>Own members</h3><dl class="method">
+<dt id="+replab.Domain.assertEqv">
+<code class="sig-name descname">assertEqv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">context</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.assertEqv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares two elements for equality</p>
+<p>Asserts that <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are not equivalent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>domain element</em>) – first element</p></li>
+<li><p><strong>y</strong> (<em>domain element</em>) – second element to compare</p></li>
+<li><p><strong>context</strong> (<em>charstring</em>) – context</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.assertNotEqv">
+<code class="sig-name descname">assertNotEqv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">context</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.assertNotEqv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares two elements for inequality</p>
+<p>Asserts that <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are equivalent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>domain element</em>) – first element</p></li>
+<li><p><strong>y</strong> (<em>domain element</em>) – second element to compare</p></li>
+<li><p><strong>context</strong> (<em>charstring</em>) – context</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.eqv">
+<code class="sig-name descname">eqv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">t</em>, <em class="sig-param">u</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.eqv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests domain elements for equality/equivalence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>domain element</em>) – First element to test</p></li>
+<li><p><strong>u</strong> (<em>domain element</em>) – Second element to test</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True when <code class="docutils literal notranslate"><span class="pre">t</span></code> and <code class="docutils literal notranslate"><span class="pre">u</span></code> are equivalent, and false otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="+replab.Domain.lambda">
+<em class="property">static </em><code class="sig-name descname">lambda</code><span class="sig-paren">(</span><em class="sig-param">header</em>, <em class="sig-param">eqvFun</em>, <em class="sig-param">sampleFun</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.lambda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a domain from function handles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> (<em>char</em>) – Header display string</p></li>
+<li><p><strong>eqvFun</strong> (<em>function_handle</em>) – Handle implementing the <a class="reference internal" href="#+replab.Domain.eqv" title="+replab.Domain.eqv"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">eqv</span></code></a> method</p></li>
+<li><p><strong>sampleFun</strong> (<em>function_handle</em>) – Handle implementing the <a class="reference internal" href="#+replab.Domain.sample" title="+replab.Domain.sample"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">sample</span></code></a> method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The constructed domain</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#+replab.Domain" title="+replab.Domain"><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">replab.Domain</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="+replab.Domain.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#+replab.Domain.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples an element from this domain</p>
+<p>This method does not make any guarantees about genericity, and is primarily used for law checks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Random domain element</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>domain element</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="index.html" title="previous chapter (use the left arrow)">Technical Reference/API</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="groups.html" title="next chapter (use the right arrow)">Abstract group structures in RepLAB</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../mat-modindex.html" title="MATLAB Module Index"
+             >matlab index</a> |</li>
+        <li class="right" >
+          <a href="groups.html" title="Abstract group structures in RepLAB"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Technical Reference/API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB 0.6.0-SNAPSHOT documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Technical Reference/API</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018-2019, Denis Rosset, Jean-Daniel Bancal and collaborators. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

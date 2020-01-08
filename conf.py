@@ -40,16 +40,9 @@ release = '0.6.0-SNAPSHOT'
 # ones.
 extensions = ['sphinx.ext.autodoc',   # for enumeration of objects stuff
               'sphinx.ext.autosummary',
-              'sphinx_collapse_admonitions',
-              'sphinxcontrib.fulltoc', # for sidebar TOC
               'sphinxcontrib.matlab', # support for Matlab
               'sphinx.ext.napoleon',  # support for shorthand syntax
-              'sphinx.ext.mathjax',   # LaTeX support
-              'texext.math_dollar']   # lightweight LaTeX filter
-
-html_sidebars = {
-    '**': ['logo-text.html', 'globaltoc.html', 'searchbox.html']
-}
+]
 
 autodoc_default_options = {'members': True, 'show-inheritance': True}
 autosummary_generate = True
@@ -87,23 +80,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-
 # -- Options for HTML output -------------------------------------------------
 
-import guzzle_sphinx_theme
-
-html_theme_path = guzzle_sphinx_theme.html_theme_path()
-html_theme = 'guzzle_sphinx_theme'
-
-# Register the theme as an extension to generate a sitemap.xml
-extensions.append("guzzle_sphinx_theme")
-
-html_static_path = ['_static']
-
-# Guzzle theme options (see theme.conf for more information)
-html_theme_options = {
-    # Set the name of the project to appear in the sidebar
-    "project_nav_name": "RepLAB",
-    # Visible levels of the global TOC; -1 means unlimited
-    "globaltoc_depth": 4,
-}
+html_theme = 'sphinx_rtd_theme'

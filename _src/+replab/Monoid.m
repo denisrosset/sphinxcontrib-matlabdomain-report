@@ -3,79 +3,11 @@ classdef Monoid < replab.Domain
 %
 % See `https://en.wikipedia.org/wiki/Monoid`_
 %
-% .. admonition:: Class members list
-%    :class: collapsed
-%
-%    - `~+replab.Monoid.additionalFields` -- Returns the name/value pairs corresponding to additional fields to be printed
-%    - `~+replab.Monoid.assertEqv` -- Compares two elements for equality
-%    - `~+replab.Monoid.assertNotEqv` -- Compares two elements for inequality
-%    - `~+replab.Monoid.compose` -- Composes two monoid/group elements
-%    - `~+replab.Monoid.composeAll` -- Composes a sequence of monoid elements
-%    - `~+replab.Monoid.composeN` -- Computes ``y = x^n`` by repeated squaring
-%    - `~+replab.Monoid.disp` -- 
-%    - `~+replab.Monoid.eq` -- Equality test
-%    - `~+replab.Monoid.eqv` -- Tests domain elements for equality/equivalence
-%    - `~+replab.Monoid.headerStr` -- Tiny single line description of the current object type
-%    - `~+replab.Monoid.hiddenFields` -- Returns the names of the fields that are not printed as a row vector
-%    - `~+replab.Monoid.identity` -- Monoid identity element
-%    - `~+replab.Monoid.isIdentity` -- Returns true if x is the identity, false otherwise
-%    - `~+replab.Monoid.lambda` -- Constructs a monoid from function handles
-%    - `~+replab.Monoid.longStr` -- Multi-line description of the current object
-%    - `~+replab.Monoid.sample` -- Samples an element from this domain
-%    - `~+replab.Monoid.shortStr` -- Single line text description of the current object
-%
 % .. admonition:: Inherited elements
-%    :class: collapsed
-%
-%
-%    .. method:: additionalFields
-%
-%       Documentation in :meth:`+replab.Str.additionalFields`
-%
-%    .. method:: assertEqv
-%
-%       Documentation in :meth:`+replab.Domain.assertEqv`
-%
-%    .. method:: assertNotEqv
-%
-%       Documentation in :meth:`+replab.Domain.assertNotEqv`
-%
-%    .. method:: disp
-%
-%       No documentation
-%
-%    .. method:: eq
-%
-%       Documentation in :meth:`+replab.Str.eq`
 %
 %    .. method:: eqv
 %
 %       Documentation in :meth:`+replab.Domain.eqv`
-%
-%    .. method:: headerStr
-%
-%       Documentation in :meth:`+replab.Str.headerStr`
-%
-%    .. method:: hiddenFields
-%
-%       Documentation in :meth:`+replab.Str.hiddenFields`
-%
-%    .. method:: longStr
-%
-%       Documentation in :meth:`+replab.Str.longStr`
-%
-%    .. method:: sample
-%
-%       Documentation in :meth:`+replab.Domain.sample`
-%
-%    .. method:: shortStr
-%
-%       Documentation in :meth:`+replab.Str.shortStr`
-%
-% .. raw:: html
-%
-%    <h3>Own members</h3>
-
 
     properties (SetAccess = protected)
         identity % Monoid identity element
